@@ -12,7 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class ItemCategory {
 
@@ -23,6 +25,9 @@ public class ItemCategory {
     @ManyToOne(fetch = LAZY, cascade = ALL)
     @JoinColumn
     private Shop shop;
+
+    @OneToMany(mappedBy = "itemCategory")
+    private List<ItemCategoryDetail> itemCategoryDetails = new ArrayList<>();
 
     private String name;
 
