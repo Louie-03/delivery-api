@@ -16,7 +16,7 @@ public class ShopService {
 	private final ShopRepository shopRepository;
 
 	public ShopDetailResponse findById(Long id) {
-		Shop shop = shopRepository.findById(id)
+		Shop shop = shopRepository.findWithItemById(id)
 			.orElseThrow(() -> new NoSuchElementException("가게를 찾을 수 없습니다."));
 		return new ShopDetailResponse(shop);
 	}
