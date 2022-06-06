@@ -1,6 +1,5 @@
 package louie.delivery.domain;
 
-import static javax.persistence.CascadeType.PERSIST;
 import static javax.persistence.FetchType.LAZY;
 
 import javax.persistence.Entity;
@@ -9,7 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class ShopCategoryDetail {
 
@@ -17,11 +18,11 @@ public class ShopCategoryDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne(fetch = LAZY, cascade = PERSIST)
+	@ManyToOne(fetch = LAZY)
 	@JoinColumn
 	private Shop shop;
 
-	@ManyToOne(fetch = LAZY, cascade = PERSIST)
+	@ManyToOne(fetch = LAZY)
 	@JoinColumn
 	private ShopCategory shopCategory;
 
