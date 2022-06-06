@@ -1,5 +1,6 @@
 package louie.delivery.repository;
 
+import java.util.List;
 import java.util.Optional;
 import louie.delivery.domain.Shop;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,6 @@ public interface ShopRepository extends JpaRepository<Shop, Long> {
 		+ "join fetch s.itemCategories ic "
 		+ "where s.id = :id ")
 	Optional<Shop> findWithItemById(@Param("id") Long id);
+
+	List<Shop> findByNameContains(String shopName);
 }

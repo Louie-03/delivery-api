@@ -1,7 +1,9 @@
 package louie.delivery.controller;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import louie.delivery.dto.ShopDetailResponse;
+import louie.delivery.dto.ShopResponse;
 import louie.delivery.service.ShopService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,4 +21,10 @@ public class ShopController {
 	public ShopDetailResponse getShopDetail(@PathVariable Long id) {
 		return shopService.findById(id);
 	}
+
+	@GetMapping
+	public List<ShopResponse> searchShop(Long shopCategoryId, String shopName) {
+		return shopService.searchByShopNameAndContainsShopCategory(shopName, shopCategoryId);
+	}
+
 }
