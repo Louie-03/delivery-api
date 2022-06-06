@@ -5,7 +5,8 @@ VALUES
     (2, '가게 2'),
     (3, '가게 3'),
     (4, '가게 4'),
-    (5, '가게 5');
+    (5, '가게 5'),
+    (6, '가게 11');
 
 INSERT INTO item_category
     (id, name, shop_id)
@@ -31,3 +32,26 @@ VALUES
     (3, 1, 3),
     (4, 1, 4),
     (5, 1, 5);
+
+INSERT INTO shop_category
+    (id, name)
+VALUES
+    (1, '1인분'),
+    (2, '한식'),
+    (3, '분식'),
+    (4, '카페/디저트'),
+    (5, '일식'),
+    (6, '치킨'),
+    (7, '피자'),
+    (8, '중국집'),
+    (9, '족발/보쌈'),
+    (10, '야식'),
+    (11, '찜/탕'),
+    (12, '도시락'),
+    (13, '패스트푸드');
+
+INSERT INTO shop_category_detail
+    (id, shop_id, shop_category_id)
+VALUES
+    (1, 1, 1),
+    (2, 1, 2);
