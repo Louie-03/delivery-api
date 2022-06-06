@@ -1,0 +1,45 @@
+ifndef::snippets[]
+:snippets: ./build/generated-snippets
+endif::[]
+
+= Delivery API
+
+== 특정 가게 상세보기
+
+=== Request
+include::{snippets}/get-shop-detail/http-request.adoc[]
+
+=== Response
+include::{snippets}/get-shop-detail/http-response.adoc[]
+
+== 모든 가게 조회
+
+=== Request
+include::{snippets}/get-shop-list/http-request.adoc[]
+
+=== Response
+include::{snippets}/get-shop-list/http-response.adoc[]
+
+== 가게 이름 검색
+
+=== Request
+include::{snippets}/get-search-shopName/http-request.adoc[]
+
+=== Response
+include::{snippets}/get-search-shopName/http-response.adoc[]
+
+== 특정 카테고리에 포함된 가게 검색
+
+=== Request
+include::{snippets}/get-search-contains-category/http-request.adoc[]
+
+=== Response
+include::{snippets}/get-search-contains-category/http-response.adoc[]
+
+== 특정 카테고리에 포함된 가게 이름 검색
+
+=== Request
+include::{snippets}/get-search-shopName-and-contains-category/http-request.adoc[]
+
+=== Response
+include::{snippets}/get-search-shopName-and-contains-category/http-response.adoc[]
